@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import { FadeIn, Float } from "./Animations";
+import { FadeIn, Float, Counter } from "./Animations";
 
 export default function Trust() {
   return (
@@ -41,8 +41,8 @@ export default function Trust() {
                 best factories with confidence.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-text-secondary">
-                <span className="bg-white px-3 py-1.5 rounded-full border border-border">8+ years in manufacturing</span>
-                <span className="bg-white px-3 py-1.5 rounded-full border border-border">10+ verified factory partners</span>
+                <span className="bg-white px-3 py-1.5 rounded-full border border-border"><Counter target={8} suffix="+" /> years in manufacturing</span>
+                <span className="bg-white px-3 py-1.5 rounded-full border border-border"><Counter target={10} suffix="+" /> verified factory partners</span>
                 <span className="bg-white px-3 py-1.5 rounded-full border border-border">Guangdong-based</span>
               </div>
               <div className="mt-6 flex items-center gap-4">

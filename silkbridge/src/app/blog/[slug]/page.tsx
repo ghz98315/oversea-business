@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EmailCapture from "@/components/EmailCapture";
+import ReadingProgress from "@/components/ReadingProgress";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
@@ -29,6 +30,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <>
       <Navbar />
+      <ReadingProgress />
       <main className="pt-32 pb-24 min-h-screen bg-white">
         <article className="max-w-3xl mx-auto px-6 lg:px-12">
           <Link
