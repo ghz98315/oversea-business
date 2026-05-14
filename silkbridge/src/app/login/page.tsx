@@ -1,9 +1,53 @@
 "use client";
 
+import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { Mail, Lock, User } from "lucide-react";
 
 export default function LoginPage() {
+  const [mode, setMode] = useState<"login" | "register">("login");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleEmailAuth = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    if (mode === "register") {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, name }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error);
+        setLoading(false);
+        return;
+      }
+    }
+
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    if (result?.error) {
+      setError(mode === "login" ? "Invalid email or password" : "Registration succeeded but login failed. Please try logging in.");
+    } else {
+      window.location.href = "/suppliers";
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
       <div className="max-w-sm w-full">
@@ -11,13 +55,16 @@ export default function LoginPage() {
           <Link href="/" className="text-2xl font-bold text-navy-900 font-[family-name:var(--font-jakarta)]">
             SilkBridge
           </Link>
-          <h1 className="mt-4 text-xl font-semibold">Sign in to your account</h1>
+          <h1 className="mt-4 text-xl font-semibold">
+            {mode === "login" ? "Sign in to your account" : "Create your account"}
+          </h1>
           <p className="mt-2 text-text-secondary text-sm">
             Access verified supplier profiles and manage your sourcing.
           </p>
         </div>
 
         <div className="bg-white rounded-2xl p-8 border border-border shadow-sm">
+          {/* Google Sign In */}
           <button
             onClick={() => signIn("google", { callbackUrl: "/suppliers" })}
             className="w-full flex items-center justify-center gap-3 bg-white border border-border hover:bg-gray-50 text-text-primary font-medium py-3 px-4 rounded-xl transition-colors"
@@ -31,8 +78,84 @@ export default function LoginPage() {
             Continue with Google
           </button>
 
-          <p className="mt-6 text-center text-xs text-text-secondary">
-            By signing in, you agree to our Terms of Service and Privacy Policy.
+          {/* Divider */}
+          <div className="flex items-center gap-3 my-6">
+            <div className="flex-1 h-px bg-border" />
+            <span className="text-xs text-text-secondary">or</span>
+            <div className="flex-1 h-px bg-border" />
+          </div>
+
+          {/* Email Form */}
+          <form onSubmit={handleEmailAuth} className="space-y-4">
+            {mode === "register" && (
+              <div className="relative">
+                <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary" />
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your name"
+                  required
+                  className="w-full pl-9 pr-4 py-3 rounded-xl border border-border bg-white focus:outline-none focus:ring-2 focus:ring-navy-700/20 focus:border-navy-700 text-sm transition-colors"
+                />
+              </div>
+            )}
+
+            <div className="relative">
+              <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary" />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address"
+                required
+                className="w-full pl-9 pr-4 py-3 rounded-xl border border-border bg-white focus:outline-none focus:ring-2 focus:ring-navy-700/20 focus:border-navy-700 text-sm transition-colors"
+              />
+            </div>
+
+            <div className="relative">
+              <Lock size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary" />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder={mode === "register" ? "Password (min 6 characters)" : "Password"}
+                required
+                minLength={6}
+                className="w-full pl-9 pr-4 py-3 rounded-xl border border-border bg-white focus:outline-none focus:ring-2 focus:ring-navy-700/20 focus:border-navy-700 text-sm transition-colors"
+              />
+            </div>
+
+            {error && (
+              <p className="text-red-500 text-xs">{error}</p>
+            )}
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-semibold py-3 rounded-xl transition-all hover:-translate-y-0.5"
+            >
+              {loading ? "..." : mode === "login" ? "Sign In" : "Create Account"}
+            </button>
+          </form>
+
+          {/* Toggle mode */}
+          <p className="mt-5 text-center text-sm text-text-secondary">
+            {mode === "login" ? (
+              <>
+                Don&apos;t have an account?{" "}
+                <button onClick={() => { setMode("register"); setError(""); }} className="text-orange-500 hover:text-orange-600 font-medium">
+                  Sign up
+                </button>
+              </>
+            ) : (
+              <>
+                Already have an account?{" "}
+                <button onClick={() => { setMode("login"); setError(""); }} className="text-orange-500 hover:text-orange-600 font-medium">
+                  Sign in
+                </button>
+              </>
+            )}
           </p>
         </div>
 
