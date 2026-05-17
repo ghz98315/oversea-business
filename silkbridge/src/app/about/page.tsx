@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MapSection from "@/components/MapSection";
 import { Factory, ShieldCheck, MapPin } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About — PearlGate | Former Factory Manager, Now Your Sourcing Partner",
+  description: "10+ years managing factory operations in Guangdong. Now I help overseas buyers source directly from the Pearl River Delta's best factories with confidence.",
+};
 
 const strengths = [
   {

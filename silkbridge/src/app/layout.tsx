@@ -33,6 +33,27 @@ export const metadata: Metadata = {
     "Foshan aluminum",
     "Pearl River Delta manufacturing",
   ],
+  metadataBase: new URL("https://pearlgate.io"),
+  openGraph: {
+    title: "PearlGate — Your Sourcing Partner in Guangdong",
+    description: "30+ verified factories across Guangdong. Hardware, industrial parts, and workwear. Browse the database or let us source for you.",
+    url: "https://pearlgate.io",
+    siteName: "PearlGate",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PearlGate — Your Sourcing Partner in Guangdong",
+    description: "30+ verified factories across Guangdong. Browse the database or let us source for you.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://pearlgate.io",
+  },
 };
 
 export default function RootLayout({
