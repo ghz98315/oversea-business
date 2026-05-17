@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { getAllSuppliers, type Supplier } from "@/lib/suppliers";
-import { X, Star, Scale } from "lucide-react";
+import { type Supplier } from "@/lib/suppliers";
+import { X, Scale } from "lucide-react";
 
-const freeSuppliers = getAllSuppliers().filter((s) => s.isFree);
-
-export default function SupplierCompare() {
+export default function SupplierCompare({ suppliers: freeSuppliers }: { suppliers: Supplier[] }) {
   const [selected, setSelected] = useState<string[]>([]);
   const [showCompare, setShowCompare] = useState(false);
 
@@ -23,7 +21,7 @@ export default function SupplierCompare() {
       <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-auto p-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">Supplier Comparison</h2>
+            <h2 className="text-xl font-bold font-[family-name:var(--font-serif)]">Supplier Comparison</h2>
             <button onClick={() => setShowCompare(false)} className="text-text-secondary hover:text-navy-900">
               <X size={24} />
             </button>

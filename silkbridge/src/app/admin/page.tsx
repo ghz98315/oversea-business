@@ -11,8 +11,8 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-gray-50 p-6 lg:p-12">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-2xl font-bold font-[family-name:var(--font-jakarta)]">
-          SilkBridge Admin
+        <h1 className="text-2xl font-bold font-[family-name:var(--font-serif)]">
+          PearlGate Admin
         </h1>
         <p className="text-text-secondary text-sm mt-1">Manage suppliers, blog posts, and email subscribers.</p>
 
@@ -210,7 +210,7 @@ function EmailList() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "silkbridge_emails.csv";
+    a.download = "pearlgate_emails.csv";
     a.click();
   };
 

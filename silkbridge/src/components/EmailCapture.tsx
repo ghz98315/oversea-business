@@ -47,7 +47,7 @@ export default function EmailCapture({
 
   return (
     <div className="p-8 rounded-2xl bg-gray-50 border border-border text-center">
-      <h3 className="text-lg font-bold font-[family-name:var(--font-jakarta)]">{title}</h3>
+      <h3 className="text-lg font-bold font-[family-name:var(--font-serif)]">{title}</h3>
       <p className="mt-2 text-text-secondary text-sm">{subtitle}</p>
       <form onSubmit={handleSubmit} className="mt-4 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
         <div className="relative flex-1">

@@ -6,25 +6,28 @@ import Footer from "@/components/Footer";
 import { getAllSuppliers, getSupplierById } from "@/lib/suppliers";
 import { MapPin, Star, Calendar, Users, Clock, Ship, ArrowLeft, Shield, CheckCircle, Mail, Lock } from "lucide-react";
 
-export function generateStaticParams() {
-  return getAllSuppliers().map((s) => ({ id: s.id }));
+export async function generateStaticParams() {
+  const all = await getAllSuppliers();
+  return all.map((s) => ({ id: s.id }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const supplier = getSupplierById(id);
+  const supplier = await getSupplierById(id);
   if (!supplier) return {};
   return {
-    title: `${supplier.name} — SilkBridge Verified Supplier`,
+    title: `${supplier.name} — PearlGate Verified Supplier`,
     description: supplier.description.slice(0, 160),
   };
 }
 
 export default async function SupplierDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const supplier = getSupplierById(id);
+  const supplier = await getSupplierById(id);
   if (!supplier) notFound();
   if (!supplier.isFree) redirect("/suppliers");
+
+  const allSuppliers = await getAllSuppliers();
 
   return (
     <>
@@ -60,7 +63,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
                   Verified {supplier.verifiedDate}
                 </span>
               </div>
-              <h1 className="text-2xl lg:text-4xl font-bold text-white font-[family-name:var(--font-jakarta)]">
+              <h1 className="text-2xl lg:text-4xl font-bold text-white font-[family-name:var(--font-serif)]">
                 {supplier.name}
               </h1>
               <p className="text-white/70 flex items-center gap-1 mt-2">
@@ -91,7 +94,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
 
           {/* Overview */}
           <section className="mt-10">
-            <h2 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">Overview</h2>
+            <h2 className="text-xl font-bold font-[family-name:var(--font-serif)]">Overview</h2>
             <p className="mt-4 text-text-secondary leading-relaxed text-lg">{supplier.description}</p>
 
             <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -104,7 +107,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
 
           {/* Business Details */}
           <section className="mt-10">
-            <h2 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">Business Details</h2>
+            <h2 className="text-xl font-bold font-[family-name:var(--font-serif)]">Business Details</h2>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
               <DetailRow label="Minimum Order" value={supplier.moq} />
               <DetailRow label="Price Range" value={supplier.priceRange} />
@@ -117,7 +120,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
 
           {/* Specialties */}
           <section className="mt-10">
-            <h2 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">Specialties</h2>
+            <h2 className="text-xl font-bold font-[family-name:var(--font-serif)]">Specialties</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {supplier.specialties.map((s) => (
                 <span key={s} className="bg-navy-900/5 text-navy-700 text-sm font-medium px-4 py-2 rounded-full">
@@ -129,7 +132,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
 
           {/* Certifications */}
           <section className="mt-10">
-            <h2 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">Certifications</h2>
+            <h2 className="text-xl font-bold font-[family-name:var(--font-serif)]">Certifications</h2>
             <div className="mt-4 flex flex-wrap gap-3">
               {supplier.certifications.map((cert) => (
                 <div key={cert} className="flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 text-sm font-medium px-4 py-2 rounded-lg">
@@ -142,7 +145,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
 
           {/* Contact */}
           <section className="mt-10">
-            <h2 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">Contact</h2>
+            <h2 className="text-xl font-bold font-[family-name:var(--font-serif)]">Contact</h2>
             <div className="mt-4 p-6 rounded-xl bg-gray-50 border border-border">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
@@ -163,7 +166,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
 
           {/* CTA */}
           <section className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 text-center">
-            <h3 className="text-xl font-bold text-white font-[family-name:var(--font-jakarta)]">
+            <h3 className="text-xl font-bold text-white font-[family-name:var(--font-serif)]">
               Interested in this supplier?
             </h3>
             <p className="mt-2 text-white/70">
@@ -180,9 +183,9 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
 
           {/* Related Suppliers */}
           <section className="mt-12">
-            <h2 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">Similar Suppliers</h2>
+            <h2 className="text-xl font-bold font-[family-name:var(--font-serif)]">Similar Suppliers</h2>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {getAllSuppliers()
+              {allSuppliers
                 .filter((s) => s.id !== supplier.id)
                 .slice(0, 2)
                 .map((s) => (

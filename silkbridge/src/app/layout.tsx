@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
 import AuthProvider from "@/components/AuthProvider";
 import PageTransition from "@/components/PageTransition";
 import "./globals.css";
@@ -14,8 +14,15 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
 });
 
+// [FONT-EXPERIMENT] Serif for hero titles & stats — revert if not working
+const serif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
+
 export const metadata: Metadata = {
-  title: "SilkBridge — Your Sourcing Partner in Guangdong",
+  title: "PearlGate — Your Sourcing Partner in Guangdong",
   description:
     "Former factory managers based in the Pearl River Delta. We help small businesses find reliable Chinese suppliers, ensure quality, and manage orders from Guangdong's best factories.",
   keywords: [
@@ -34,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${serif.variable}`}>
       <body className="min-h-screen antialiased">
         <AuthProvider>
           <PageTransition>{children}</PageTransition>

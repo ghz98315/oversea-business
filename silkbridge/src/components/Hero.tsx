@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Shield, MapPin, Clock } from "lucide-react";
+import { Shield, MapPin, Clock, Database, Phone } from "lucide-react";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -35,68 +35,73 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-white/80 text-sm mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Accepting new sourcing requests
+            Pearl River Delta · Guangdong, China
+            <span className="inline-block w-px h-3 bg-white/30 mx-1" />
+            <span className="text-green-400 font-semibold">Factory-Verified</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-4xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-jakarta)]"
+            className="text-4xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-serif)]"
           >
-            Your Sourcing Partner in Guangdong
+            The Factory Database
+            <br />
+            Guangdong <span className="text-orange-500 italic">Buyers</span>
+            <br />
+            Actually Trust.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-2 text-xl lg:text-2xl text-orange-500/90 font-medium font-[family-name:var(--font-jakarta)]"
-          >
-            China&apos;s Manufacturing Heartland
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-6 text-lg text-white/75 leading-relaxed max-w-xl"
           >
-            Former factory managers based in the Pearl River Delta. We know every major
-            hardware cluster from Yangjiang to Foshan — and we can walk into any factory tomorrow.
+            30+ personally-vetted factories across Dongguan, Foshan, Yangjiang and Guangzhou.
+            Hardware, industrial parts, and workwear. Browse yourself — or let us source for you.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="mt-8 flex flex-wrap gap-4"
           >
             <Link
-              href="/quote"
-              className="inline-block mt-8 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25 relative"
+              href="/suppliers"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3.5 rounded-lg text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25"
             >
-              <span className="absolute inset-0 rounded-lg bg-orange-500/30 blur-xl" />
-              <span className="relative">Get a Free Quote</span>
+              <Database size={18} />
+              Browse the Database
+            </Link>
+            <Link
+              href="/quote"
+              className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-medium px-7 py-3.5 rounded-lg text-base transition-all hover:-translate-y-0.5 backdrop-blur-sm"
+            >
+              <Phone size={18} />
+              Book a Free Call
             </Link>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-10 flex flex-wrap gap-5 text-white/60 text-sm"
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="mt-10 pt-6 border-t border-white/10 flex flex-wrap gap-3"
           >
-            <span className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <Shield size={14} />
-              Former BYD Technical Manager
-            </span>
-            <span className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <Clock size={14} />
-              8+ Years in Manufacturing
-            </span>
-            <span className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <MapPin size={14} />
-              Pearl River Delta
-            </span>
+            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
+              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">30+</span>
+              <span className="text-xs text-white/60">Verified<br/>Factories</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
+              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">3</span>
+              <span className="text-xs text-white/60">Product<br/>Categories</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
+              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">10yr</span>
+              <span className="text-xs text-white/60">Factory<br/>Experience</span>
+            </div>
           </motion.div>
         </div>
       </div>

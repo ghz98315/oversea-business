@@ -32,7 +32,7 @@ export default function Trust() {
 
           <FadeIn direction="right" delay={0.2}>
             <div>
-              <h2 className="text-2xl lg:text-3xl font-bold font-[family-name:var(--font-jakarta)]">
+              <h2 className="text-2xl lg:text-3xl font-bold font-[family-name:var(--font-serif)]">
                 &ldquo;I&apos;ve been inside hundreds of factories — now I go in for you.&rdquo;
               </h2>
               <p className="mt-4 text-text-secondary leading-relaxed">

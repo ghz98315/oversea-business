@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PainPoints from "@/components/PainPoints";
+import DatabasePreview from "@/components/DatabasePreview";
+import DualProduct from "@/components/DualProduct";
+import StatsBar from "@/components/StatsBar";
 import Services from "@/components/Services";
-import ProductBand from "@/components/ProductBand";
 import WhyGuangdong from "@/components/WhyGuangdong";
-import Industries from "@/components/Industries";
-import SupplierBanner from "@/components/SupplierBanner";
 import Process from "@/components/Process";
 import Trust from "@/components/Trust";
 import FAQ from "@/components/FAQ";
@@ -20,11 +20,11 @@ export default function Home() {
       <main>
         <Hero />
         <PainPoints />
+        <DualProduct />
+        <StatsBar />
+        <DatabasePreview />
         <Services />
-        <ProductBand />
         <WhyGuangdong />
-        <Industries />
-        <SupplierBanner />
         <Process />
         <Trust />
         <FAQ />

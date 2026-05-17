@@ -6,7 +6,7 @@ import { getAllPosts } from "@/lib/posts";
 import { Calendar, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Blog — SilkBridge | China Sourcing Guides & Tips",
+  title: "Blog — PearlGate | China Sourcing Guides & Tips",
   description: "Practical guides for sourcing from China. Learn how to find reliable suppliers, manage quality, and navigate Guangdong's industrial clusters.",
 };
 
@@ -19,7 +19,7 @@ export default function BlogPage() {
       <main className="pt-32 pb-24 min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-2xl">
-            <h1 className="text-3xl lg:text-5xl font-bold font-[family-name:var(--font-jakarta)]">
+            <h1 className="text-3xl lg:text-5xl font-bold font-[family-name:var(--font-serif)]">
               Sourcing Guides
             </h1>
             <p className="mt-4 text-text-secondary text-lg leading-relaxed">

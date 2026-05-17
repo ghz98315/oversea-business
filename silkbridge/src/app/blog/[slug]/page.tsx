@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} — SilkBridge`,
+    title: `${post.title} — PearlGate`,
     description: post.description,
   };
 }
@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.category}
           </span>
 
-          <h1 className="mt-4 text-3xl lg:text-4xl font-bold leading-tight font-[family-name:var(--font-jakarta)]">
+          <h1 className="mt-4 text-3xl lg:text-4xl font-bold leading-tight font-[family-name:var(--font-serif)]">
             {post.title}
           </h1>
 
@@ -73,10 +73,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="mt-12 space-y-6">
             {post.content.split("\n\n").map((block, i) => {
               if (block.startsWith("## ")) {
-                return <h2 key={i} className="text-2xl font-bold mt-10 mb-4 font-[family-name:var(--font-jakarta)]">{block.replace("## ", "")}</h2>;
+                return <h2 key={i} className="text-2xl font-bold mt-10 mb-4 font-[family-name:var(--font-serif)]">{block.replace("## ", "")}</h2>;
               }
               if (block.startsWith("### ")) {
-                return <h3 key={i} className="text-xl font-semibold mt-8 mb-3 font-[family-name:var(--font-jakarta)]">{block.replace("### ", "")}</h3>;
+                return <h3 key={i} className="text-xl font-semibold mt-8 mb-3 font-[family-name:var(--font-serif)]">{block.replace("### ", "")}</h3>;
               }
               if (block.startsWith("- ")) {
                 const items = block.split("\n").filter(l => l.startsWith("- "));
@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* CTA */}
           <div className="mt-16 p-8 rounded-2xl bg-gray-50 border border-border text-center">
-            <h3 className="text-xl font-bold font-[family-name:var(--font-jakarta)]">
+            <h3 className="text-xl font-bold font-[family-name:var(--font-serif)]">
               Need help sourcing?
             </h3>
             <p className="mt-2 text-text-secondary">

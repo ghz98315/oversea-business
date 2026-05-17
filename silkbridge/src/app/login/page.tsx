@@ -52,8 +52,8 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
       <div className="max-w-sm w-full">
         <div className="text-center mb-8">
-          <Link href="/" className="text-2xl font-bold text-navy-900 font-[family-name:var(--font-jakarta)]">
-            SilkBridge
+          <Link href="/" className="inline-flex items-center justify-center gap-2 text-2xl font-bold font-[family-name:var(--font-serif)]">
+            <span className="text-navy-900">Pearl</span><span className="text-orange-500">Gate</span>
           </Link>
           <h1 className="mt-4 text-xl font-semibold">
             {mode === "login" ? "Sign in to your account" : "Create your account"}

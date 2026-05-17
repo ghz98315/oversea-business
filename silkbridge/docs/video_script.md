@@ -2,7 +2,7 @@
 
 ## 开场（0:00 - 0:20）
 
-Hey, I'm [Your Name].
+Hey, I'm Alex Guan.
 
 I spent over 8 years as a technical manager at BYD — yes, the BYD that makes electric cars and batteries. My job was managing production lines, solving quality problems, and making sure products met spec before they shipped.
 

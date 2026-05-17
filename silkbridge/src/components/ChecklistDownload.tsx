@@ -43,7 +43,7 @@ export default function ChecklistDownload() {
           <FileDown size={28} className="text-orange-500" />
         </div>
         <div className="flex-1 text-center md:text-left">
-          <h3 className="text-lg font-bold font-[family-name:var(--font-jakarta)]">
+          <h3 className="text-lg font-bold font-[family-name:var(--font-serif)]">
             Free: 10 Questions to Ask Before Choosing a Chinese Supplier
           </h3>
           <p className="mt-1 text-text-secondary text-sm">

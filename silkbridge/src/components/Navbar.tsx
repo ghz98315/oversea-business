@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import { Menu, X, User, LogOut } from "lucide-react";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,8 +13,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy-900/95 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
-        <Link href="/" className="text-white font-bold text-xl tracking-tight font-[family-name:var(--font-jakarta)]">
-          SilkBridge
+        <Link href="/">
+          <Logo />
         </Link>
 
         <div className="hidden md:flex items-center gap-6">

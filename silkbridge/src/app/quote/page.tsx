@@ -17,7 +17,7 @@ export default function QuotePage() {
             <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto">
               <CheckCircle size={32} className="text-green-600" />
             </div>
-            <h1 className="mt-6 text-3xl font-bold font-[family-name:var(--font-jakarta)]">
+            <h1 className="mt-6 text-3xl font-bold font-[family-name:var(--font-serif)]">
               Thanks! Your request is in.
             </h1>
             <p className="mt-4 text-text-secondary text-lg leading-relaxed">
@@ -42,7 +42,7 @@ export default function QuotePage() {
       <Navbar />
       <main className="pt-32 pb-24 min-h-screen bg-gray-50">
         <div className="max-w-2xl mx-auto px-6 lg:px-12">
-          <h1 className="text-3xl lg:text-4xl font-bold font-[family-name:var(--font-jakarta)]">
+          <h1 className="text-3xl lg:text-4xl font-bold font-[family-name:var(--font-serif)]">
             Get a Free Quote
           </h1>
           <p className="mt-3 text-text-secondary text-lg">

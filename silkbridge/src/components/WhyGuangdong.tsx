@@ -31,7 +31,7 @@ export default function WhyGuangdong() {
     <section className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <FadeIn>
-          <h2 className="text-3xl lg:text-4xl font-bold text-center font-[family-name:var(--font-jakarta)]">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center font-[family-name:var(--font-serif)]">
             Why Guangdong?
           </h2>
           <p className="mt-4 text-text-secondary text-center text-lg max-w-2xl mx-auto">

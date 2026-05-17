@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -6,9 +7,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-white font-bold text-xl font-[family-name:var(--font-jakarta)] mb-3">
-              SilkBridge
-            </h3>
+            <div className="mb-3">
+              <Logo />
+            </div>
             <p className="text-sm leading-relaxed">
               Your sourcing partner in Guangdong&apos;s factories.
               Former factory managers helping you source with confidence.
@@ -28,7 +29,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>hello@silkbridge.com</li>
+              <li>hello@pearlgate.io</li>
               <li>Based in Guangdong, China</li>
               <li>
                 <a
@@ -44,8 +45,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-xs">
-          © {new Date().getFullYear()} SilkBridge. All rights reserved.
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+          <span>© {new Date().getFullYear()} PearlGate. Based in Guangdong, China.</span>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+          </div>
         </div>
       </div>
     </footer>

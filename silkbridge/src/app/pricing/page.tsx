@@ -98,7 +98,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto">
-            <h1 className="text-3xl lg:text-5xl font-bold font-[family-name:var(--font-jakarta)]">
+            <h1 className="text-3xl lg:text-5xl font-bold font-[family-name:var(--font-serif)]">
               Simple, transparent pricing
             </h1>
             <p className="mt-4 text-text-secondary text-lg">
@@ -129,7 +129,7 @@ export default function PricingPage() {
                 <div>
                   <h3 className="text-lg font-semibold">{plan.name}</h3>
                   <div className="mt-3 flex items-baseline gap-1">
-                    <span className="text-4xl font-bold font-[family-name:var(--font-jakarta)]">{plan.price}</span>
+                    <span className="text-4xl font-bold font-[family-name:var(--font-serif)]">{plan.price}</span>
                     <span className="text-text-secondary text-sm">{plan.period}</span>
                   </div>
                   {plan.annual && (
@@ -184,7 +184,7 @@ export default function PricingPage() {
 
           {/* FAQ */}
           <div className="mt-20 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-center font-[family-name:var(--font-jakarta)]">
+            <h2 className="text-2xl font-bold text-center font-[family-name:var(--font-serif)]">
               Questions about pricing
             </h2>
             <div className="mt-8 space-y-6">

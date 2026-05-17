@@ -54,7 +54,7 @@ export default function AboutPage() {
               </div>
 
               <div className="max-w-xl">
-                <h1 className="text-3xl lg:text-5xl font-bold font-[family-name:var(--font-jakarta)]">
+                <h1 className="text-3xl lg:text-5xl font-bold font-[family-name:var(--font-serif)]">
                   Hi, I&apos;m your sourcing partner.
                 </h1>
                 <p className="mt-6 text-text-secondary text-lg leading-relaxed">
@@ -76,7 +76,7 @@ export default function AboutPage() {
         <section className="py-20 lg:py-28 bg-navy-900">
           <div className="max-w-4xl mx-auto px-6 lg:px-12">
             <div className="text-center mb-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-white font-[family-name:var(--font-jakarta)]">
+              <h2 className="text-2xl lg:text-3xl font-bold text-white font-[family-name:var(--font-serif)]">
                 Watch: Who I am & how I can help
               </h2>
               <p className="mt-3 text-white/60">
@@ -87,7 +87,7 @@ export default function AboutPage() {
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-black/30 border border-white/10">
               <iframe
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="SilkBridge Introduction"
+                title="PearlGate Introduction"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0 w-full h-full"
@@ -103,7 +103,7 @@ export default function AboutPage() {
         {/* My Story */}
         <section className="py-20 lg:py-28 bg-gray-50">
           <div className="max-w-3xl mx-auto px-6 lg:px-12">
-            <h2 className="text-2xl lg:text-3xl font-bold font-[family-name:var(--font-jakarta)]">
+            <h2 className="text-2xl lg:text-3xl font-bold font-[family-name:var(--font-serif)]">
               My Story
             </h2>
             <div className="mt-8 space-y-6 text-text-secondary leading-relaxed text-lg">
@@ -121,7 +121,7 @@ export default function AboutPage() {
                 on the ground who could be their eyes, ears, and quality gate.
               </p>
               <p>
-                That&apos;s why I started SilkBridge. I combine my factory management experience
+                That&apos;s why I started PearlGate. I combine my factory management experience
                 with deep relationships across Guangdong&apos;s industrial clusters to give
                 overseas buyers something they can&apos;t get anywhere else: a trusted insider
                 who works for them, not the factory.
@@ -133,7 +133,7 @@ export default function AboutPage() {
         {/* Why Work With Me */}
         <section className="py-20 lg:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <h2 className="text-2xl lg:text-3xl font-bold text-center font-[family-name:var(--font-jakarta)]">
+            <h2 className="text-2xl lg:text-3xl font-bold text-center font-[family-name:var(--font-serif)]">
               Why work with me
             </h2>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -155,7 +155,7 @@ export default function AboutPage() {
         {/* Coverage Map */}
         <section className="py-20 lg:py-28 bg-gray-50">
           <div className="max-w-5xl mx-auto px-6 lg:px-12">
-            <h2 className="text-2xl lg:text-3xl font-bold text-center font-[family-name:var(--font-jakarta)]">
+            <h2 className="text-2xl lg:text-3xl font-bold text-center font-[family-name:var(--font-serif)]">
               Our Coverage — Pearl River Delta
             </h2>
             <p className="mt-4 text-text-secondary text-center">
@@ -171,7 +171,7 @@ export default function AboutPage() {
         {/* Factory Gallery */}
         <section className="py-20 lg:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <h2 className="text-2xl lg:text-3xl font-bold text-center font-[family-name:var(--font-jakarta)]">
+            <h2 className="text-2xl lg:text-3xl font-bold text-center font-[family-name:var(--font-serif)]">
               Inside the factories
             </h2>
             <p className="mt-4 text-text-secondary text-center">
@@ -197,7 +197,7 @@ export default function AboutPage() {
         {/* CTA */}
         <section className="py-20 lg:py-28 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700">
           <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white font-[family-name:var(--font-jakarta)]">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white font-[family-name:var(--font-serif)]">
               Ready to work together?
             </h2>
             <p className="mt-4 text-white/70 text-lg">
