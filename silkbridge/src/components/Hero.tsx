@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Shield, MapPin, Clock, Database, Phone } from "lucide-react";
+import { Shield, MapPin, Clock, Database, Send } from "lucide-react";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -12,10 +12,10 @@ export default function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden">
       <motion.div style={{ y: bgY }} className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&q=80"
+          src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=75"
           alt="Modern factory floor"
           fill
           className="object-cover scale-110"
@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent" />
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 lg:py-40">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-40">
         <div className="max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,13 +44,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-4xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-serif)]"
+            className="text-3xl lg:text-5xl font-bold text-white leading-tight font-[family-name:var(--font-serif)]"
           >
-            The Factory Database
+            Verified China Factories. No Alibaba Guesswork
             <br />
-            Guangdong <span className="text-orange-500 italic">Buyers</span>
-            <br />
-            Actually Trust.
+            <span className="text-orange-500">— Vetted by a 10-Year Factory Manager.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -58,8 +56,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-6 text-lg text-white/75 leading-relaxed max-w-xl"
           >
-            30+ personally-vetted factories across Dongguan, Foshan, Yangjiang and Guangzhou.
-            Hardware, industrial parts, and workwear. Browse yourself — or let us source for you.
+            20+ personally-vetted factories in hardware tools and molds. Browse the database
+            or submit your sourcing request — we&apos;ll match you with 2-3 verified options in 48 hours.
           </motion.p>
 
           <motion.div
@@ -73,14 +71,14 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3.5 rounded-lg text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25"
             >
               <Database size={18} />
-              Browse the Database
+              Browse Suppliers
             </Link>
             <Link
               href="/quote"
               className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-medium px-7 py-3.5 rounded-lg text-base transition-all hover:-translate-y-0.5 backdrop-blur-sm"
             >
-              <Phone size={18} />
-              Book a Free Call
+              <Send size={18} />
+              Submit an Inquiry
             </Link>
           </motion.div>
 
@@ -88,19 +86,23 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="mt-10 pt-6 border-t border-white/10 flex flex-wrap gap-3"
+            className="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 lg:flex lg:flex-wrap gap-3"
           >
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
-              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">30+</span>
+              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">20+</span>
               <span className="text-xs text-white/60">Verified<br/>Factories</span>
             </div>
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
-              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">3</span>
-              <span className="text-xs text-white/60">Product<br/>Categories</span>
+              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">2</span>
+              <span className="text-xs text-white/60">Core<br/>Categories</span>
             </div>
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
               <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">10yr</span>
               <span className="text-xs text-white/60">Factory<br/>Experience</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
+              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">48h</span>
+              <span className="text-xs text-white/60">Free<br/>Matching</span>
             </div>
           </motion.div>
         </div>

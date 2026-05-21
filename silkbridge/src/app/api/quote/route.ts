@@ -17,7 +17,6 @@ export async function POST(request: NextRequest) {
   const adminEmail = process.env.ADMIN_EMAIL || "delivered@resend.dev";
 
   if (!apiKey) {
-    console.log("[quote] No RESEND_API_KEY set, skipping emails. Form data:", data);
     return NextResponse.json({ success: true, emailSent: false });
   }
 
@@ -26,13 +25,13 @@ export async function POST(request: NextRequest) {
   try {
     await Promise.all([
       resend.emails.send({
-        from: "PearlGate <onboarding@resend.dev>",
+        from: "PearlGate <hello@pearlgatesourcing.com>",
         to: data.email,
         subject: "We received your sourcing request — PearlGate",
         html: buildCustomerConfirmationEmail(data),
       }),
       resend.emails.send({
-        from: "PearlGate Quotes <onboarding@resend.dev>",
+        from: "PearlGate Quotes <quotes@pearlgatesourcing.com>",
         to: adminEmail,
         subject: `[New Quote] ${data.category} — ${data.name}`,
         html: buildAdminNotificationEmail(data),
@@ -41,8 +40,7 @@ export async function POST(request: NextRequest) {
     ]);
 
     return NextResponse.json({ success: true, emailSent: true });
-  } catch (error) {
-    console.error("[quote] Email send failed:", error);
+  } catch {
     return NextResponse.json({ success: true, emailSent: false });
   }
 }

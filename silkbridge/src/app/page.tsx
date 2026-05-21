@@ -1,12 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import SocialProof from "@/components/SocialProof";
 import PainPoints from "@/components/PainPoints";
 import DatabasePreview from "@/components/DatabasePreview";
-import DualProduct from "@/components/DualProduct";
-import StatsBar from "@/components/StatsBar";
 import Services from "@/components/Services";
 import WhyGuangdong from "@/components/WhyGuangdong";
 import Process from "@/components/Process";
+import BlogPreview from "@/components/BlogPreview";
 import Trust from "@/components/Trust";
 import FAQ from "@/components/FAQ";
 import EmailCapture from "@/components/EmailCapture";
@@ -19,13 +19,13 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <SocialProof />
         <PainPoints />
-        <DualProduct />
-        <StatsBar />
         <DatabasePreview />
         <Services />
         <WhyGuangdong />
         <Process />
+        <BlogPreview />
         <Trust />
         <FAQ />
         <div className="py-16 bg-white">

@@ -22,14 +22,14 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/quote" className="hover:text-white transition-colors">Get a Quote</Link></li>
+              <li><Link href="/quote" className="hover:text-white transition-colors">Submit an Inquiry</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>hello@pearlgate.io</li>
+              <li>hello@pearlgatesourcing.com</li>
               <li>Based in Guangdong, China</li>
               <li>
                 <a

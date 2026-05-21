@@ -1,59 +1,54 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import Script from "next/script";
-import AuthProvider from "@/components/AuthProvider";
-import PageTransition from "@/components/PageTransition";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-});
-
-// [FONT-EXPERIMENT] Serif for hero titles & stats — revert if not working
 const serif = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "PearlGate — Your Sourcing Partner in Guangdong",
+  title: "PearlGate — Verified China Factory Database | Hardware & Mold Sourcing",
   description:
-    "Former factory managers based in the Pearl River Delta. We help small businesses find reliable Chinese suppliers, ensure quality, and manage orders from Guangdong's best factories.",
+    "20+ personally-vetted factories in hardware tools and molds. Browse the database or submit your sourcing request — we'll match you with verified options in 48 hours.",
   keywords: [
-    "China sourcing agent",
-    "Guangdong supplier",
-    "CNC machining China",
+    "China factory database",
+    "verified Chinese suppliers",
+    "hardware tools supplier China",
+    "mold manufacturer China",
+    "Guangdong factory",
     "Yangjiang knife supplier",
-    "Foshan aluminum",
-    "Pearl River Delta manufacturing",
+    "Dongguan mold maker",
   ],
-  metadataBase: new URL("https://pearlgate.io"),
+  metadataBase: new URL("https://pearlgatesourcing.com"),
   openGraph: {
-    title: "PearlGate — Your Sourcing Partner in Guangdong",
-    description: "30+ verified factories across Guangdong. Hardware, industrial parts, and workwear. Browse the database or let us source for you.",
-    url: "https://pearlgate.io",
+    title: "PearlGate — Verified China Factory Database | Hardware & Mold Sourcing",
+    description: "20+ verified factories in Guangdong. Hardware tools and molds. Browse the database or get matched with 2-3 options in 48 hours.",
+    url: "https://pearlgatesourcing.com",
     siteName: "PearlGate",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PearlGate — Your Sourcing Partner in Guangdong",
-    description: "30+ verified factories across Guangdong. Browse the database or let us source for you.",
+    title: "PearlGate — Verified China Factory Database",
+    description: "20+ verified factories in Guangdong. Hardware tools and molds. Free factory matching in 48 hours.",
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: "https://pearlgate.io",
+    canonical: "https://pearlgatesourcing.com",
   },
 };
 
@@ -63,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${serif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${serif.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-EZ49XXCGPG"
@@ -79,9 +74,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-screen antialiased">
-        <AuthProvider>
-          <PageTransition>{children}</PageTransition>
-        </AuthProvider>
+        {children}
       </body>
     </html>
   );
