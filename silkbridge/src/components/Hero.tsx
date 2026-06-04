@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Shield, MapPin, Clock, Database, Send } from "lucide-react";
+import { ShieldCheck, Zap, Factory, Clock, Search, FileText } from "lucide-react";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -37,7 +37,7 @@ export default function Hero() {
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             Pearl River Delta · Guangdong, China
             <span className="inline-block w-px h-3 bg-white/30 mx-1" />
-            <span className="text-green-400 font-semibold">Factory-Verified</span>
+            <span className="text-green-400 font-semibold">CCS/NACS/Type2 Specialist</span>
           </motion.div>
 
           <motion.h1
@@ -46,18 +46,25 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="text-3xl lg:text-5xl font-bold text-white leading-tight font-[family-name:var(--font-serif)]"
           >
-            Verified China Factories. No Alibaba Guesswork
-            <br />
-            <span className="text-orange-500">— Vetted by a 10-Year Factory Manager.</span>
+            Stop Gambling on EVSE Manufacturers
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-6 text-lg text-white/75 leading-relaxed max-w-xl"
+            className="mt-6 text-xl text-orange-400 leading-relaxed max-w-2xl font-semibold"
           >
-            20+ personally-vetted factories in hardware tools and molds. Browse the database
-            or submit your sourcing request — we&apos;ll match you with 2-3 verified options in 48 hours.
+            One fake UL 2594 cert = $100K+ loss. One wrong connector standard (CCS1 vs CCS2) = entire container useless.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-4 text-lg text-white/80 leading-relaxed max-w-xl"
+          >
+            I audit EVSE manufacturers and charging cable OEMs before you deploy. Former BYD quality manager
+            specializing in CCS1/CCS2/NACS connector compliance and DC fast charging infrastructure.
+            I verify what others can&apos;t fake: UL/IEC certifications, temperature rise test data, liquid-cooled cable capabilities.
           </motion.p>
 
           <motion.div
@@ -67,18 +74,18 @@ export default function Hero() {
             className="mt-8 flex flex-wrap gap-4"
           >
             <Link
-              href="/suppliers"
+              href="/supplier-match"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3.5 rounded-lg text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25"
             >
-              <Database size={18} />
-              Browse Suppliers
+              <Search size={18} />
+              Get Free Factory Verification (48h)
             </Link>
             <Link
-              href="/quote"
+              href="/factory-verification"
               className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-medium px-7 py-3.5 rounded-lg text-base transition-all hover:-translate-y-0.5 backdrop-blur-sm"
             >
-              <Send size={18} />
-              Submit an Inquiry
+              <FileText size={18} />
+              How I Verify Suppliers
             </Link>
           </motion.div>
 
@@ -89,20 +96,20 @@ export default function Hero() {
             className="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 lg:flex lg:flex-wrap gap-3"
           >
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
-              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">20+</span>
-              <span className="text-xs text-white/60">Verified<br/>Factories</span>
+              <ShieldCheck className="text-orange-500" size={20} />
+              <span className="text-xs text-white/60">UL/IEC Certified<br/>Network</span>
             </div>
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
-              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">2</span>
-              <span className="text-xs text-white/60">Core<br/>Categories</span>
+              <Zap className="text-orange-500" size={20} />
+              <span className="text-xs text-white/60">EVSE & Connector<br/>Specialist</span>
             </div>
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
-              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">10yr</span>
-              <span className="text-xs text-white/60">Factory<br/>Experience</span>
+              <Factory className="text-orange-500" size={20} />
+              <span className="text-xs text-white/60">11yr Charging<br/>Infrastructure</span>
             </div>
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2.5">
-              <span className="text-2xl font-bold text-orange-500 font-[family-name:var(--font-serif)]">48h</span>
-              <span className="text-xs text-white/60">Free<br/>Matching</span>
+              <Clock className="text-orange-500" size={20} />
+              <span className="text-xs text-white/60">48h OEM<br/>Matching</span>
             </div>
           </motion.div>
         </div>

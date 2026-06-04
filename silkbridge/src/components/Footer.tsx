@@ -11,8 +11,8 @@ export default function Footer() {
               <Logo />
             </div>
             <p className="text-sm leading-relaxed">
-              Your sourcing partner in Guangdong&apos;s factories.
-              Former factory managers helping you source with confidence.
+              Your EVSE procurement partner in China&apos;s charging infrastructure supply chain.
+              Former BYD quality managers helping you source CCS/NACS connectors with confidence.
             </p>
           </div>
 
@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>hello@pearlgatesourcing.com</li>
+              <li>Alex.Guan@pearlgatesourcing.com</li>
               <li>Based in Guangdong, China</li>
               <li>
                 <a

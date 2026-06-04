@@ -1,11 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SocialProof from "@/components/SocialProof";
+import WhoShouldWorkWithMe from "@/components/WhoShouldWorkWithMe";
 import PainPoints from "@/components/PainPoints";
+import WhyChooseMe from "@/components/WhyChooseMe";
 import DatabasePreview from "@/components/DatabasePreview";
 import Services from "@/components/Services";
 import WhyGuangdong from "@/components/WhyGuangdong";
 import Process from "@/components/Process";
+import Testimonials from "@/components/Testimonials";
 import BlogPreview from "@/components/BlogPreview";
 import Trust from "@/components/Trust";
 import FAQ from "@/components/FAQ";
@@ -20,9 +23,12 @@ export default function Home() {
       <main>
         <Hero />
         <SocialProof />
+        <WhoShouldWorkWithMe />
         <PainPoints />
+        <WhyChooseMe />
         <DatabasePreview />
         <Services />
+        <Testimonials />
         <WhyGuangdong />
         <Process />
         <BlogPreview />

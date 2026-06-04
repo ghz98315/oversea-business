@@ -1,23 +1,28 @@
 "use client";
 
-import { Search, ClipboardCheck, Database } from "lucide-react";
+import { Search, ShieldCheck, Package, FileText } from "lucide-react";
 import { FadeIn, Stagger, StaggerItem } from "./Animations";
 
 const services = [
   {
-    icon: Database,
-    title: "Verified Factory Database",
-    description: "Browse 20+ factories personally visited and vetted. See MOQ, certifications, lead times, and specialties — all in one place.",
-  },
-  {
     icon: Search,
-    title: "Free Factory Matching",
-    description: "Tell us what you need. We'll match you with 2-3 verified factories and send comparative quotes within 48 hours.",
+    title: "EVSE Manufacturer Matching",
+    description: "Connect with UL 2251/2594-certified EVSE manufacturers and IEC 62196-compliant charging cable OEMs in Pearl River Delta. We evaluate CCS1/CCS2/NACS connector production capability, liquid-cooled cable expertise, and charging infrastructure export experience.",
   },
   {
-    icon: ClipboardCheck,
-    title: "Optional QC Support",
-    description: "Need on-site inspection before shipping? We offer quality control visits with photos and detailed reports.",
+    icon: ShieldCheck,
+    title: "Charging Equipment OEM Audits",
+    description: "Reduce EVSE procurement risks through on-site factory audits. We verify UL/IEC/SAE certifications, temperature rise test data, DC fast charging cable production lines, connector assembly QC processes, and automotive-grade component sourcing.",
+  },
+  {
+    icon: Package,
+    title: "White-Label EVSE Support",
+    description: "Support custom EVSE branding, charging cable packaging design, and OEM manufacturing coordination. We help navigate MOQ requirements for CCS/NACS connectors, tooling costs for liquid-cooled cables, and Level 2 EVSE production timelines.",
+  },
+  {
+    icon: FileText,
+    title: "Charging Infrastructure Insights",
+    description: "Understand China's EVSE and connector supply chain through industry research, IEC/UL certification guides, and charging equipment OEM intelligence. Knowledge that reduces charging infrastructure procurement uncertainty.",
   },
 ];
 
@@ -27,14 +32,14 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <FadeIn>
           <h2 className="text-3xl lg:text-4xl font-bold text-center font-[family-name:var(--font-serif)]">
-            What we offer
+            Charging Infrastructure Procurement Services
           </h2>
           <p className="mt-4 text-text-secondary text-center text-lg max-w-2xl mx-auto">
-            Everything you need to find and connect with the right Chinese factory.
+            Everything you need to source EVSE and charging cables from China with confidence.
           </p>
         </FadeIn>
 
-        <Stagger staggerDelay={0.15} className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <Stagger staggerDelay={0.15} className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
             <StaggerItem key={service.title}>
               <div className="p-8 rounded-2xl bg-white border border-border hover:shadow-lg hover:border-navy-700/30 transition-all duration-300 hover:-translate-y-1 group h-full">

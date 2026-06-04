@@ -6,27 +6,27 @@ import { FadeIn, Stagger, StaggerItem } from "./Animations";
 const painPoints = [
   {
     icon: AlertTriangle,
-    title: "Too many suppliers, no way to tell who's legit",
-    description: "Alibaba shows 10,000 results — but which one won't ghost you after payment?",
-    solution: "Every factory on PearlGate is personally verified by someone who managed Guangdong factories for 10+ years.",
+    title: "Fake UL 2594 certifications slip through",
+    description: "EVSE manufacturer shows you a UL 2594 certificate. Looks legit. You ship to the US. Customs rejects the entire container — certificate was fake. $100K+ loss, 3-month delay.",
+    solution: "I verify every UL 2251/2594 certificate in the official database and cross-check with test reports. I've caught fake EVSE certifications that would have cost buyers $500K+ in losses.",
   },
   {
     icon: MessageCircleWarning,
-    title: "Language barriers slow everything down",
-    description: "Spec sheets lost in translation. Factories misunderstand tolerances and timelines.",
-    solution: "We handle all factory communication in Mandarin, negotiate on your behalf, and translate specs precisely.",
+    title: "Wrong connector standard = useless EVSE",
+    description: "You ordered CCS1 cables for the US charging network. OEM shipped CCS2 (European standard). Connectors physically incompatible with Type 1 vehicles. Entire batch is scrap unless you eat the reshipping cost.",
+    solution: "I speak the technical language — CCS1 vs CCS2, NACS vs J1772, Type 1 vs Type 2, IEC 62196-2 vs 62196-3. I verify connector samples match charging infrastructure specs before bulk production.",
   },
   {
     icon: ImageOff,
-    title: "Quality surprises after shipment",
-    description: "Containers arrive and 20% is defective. By then it's too late to fix anything.",
-    solution: "Our QC comes from someone who managed production lines. Problems caught before they leave port.",
+    title: "DC charging cables overheat at rated current",
+    description: "EVSE manufacturer claims \"200A rated\" but uses undersized conductors. Cables overheat during DC fast charging sessions. Fire hazard, UL 2594 failure, product recall nightmare.",
+    solution: "I check conductor sizing (AWG/mm²), cable construction drawings, and temperature rise test data. I know what automotive-grade EVSE actually requires — not consumer electronics standards.",
   },
   {
     icon: Ban,
-    title: "Minimum orders are too high",
-    description: "You need 500 units, not 5,000 — but factories won't take small buyers seriously.",
-    solution: "Our network includes factories with flexible MOQs for first orders. We negotiate on your behalf.",
+    title: "Consumer-grade parts in charging equipment",
+    description: "OEM uses consumer electronics components in EVSE. Works in the lab, fails in -20°C winter or after 5,000 charging cycles. IEC 62752 non-compliance. No refund after 6 months.",
+    solution: "Former BYD quality manager — I know the difference between consumer-grade and automotive-grade charging infrastructure. I verify component suppliers, connector ratings, and flex cycle test data.",
   },
 ];
 
@@ -39,10 +39,10 @@ export default function PainPoints() {
             Why PearlGate
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-center font-[family-name:var(--font-serif)]">
-            Sourcing from China is broken.
+            EVSE Procurement Mistakes Cost $100K+
           </h2>
           <p className="mt-3 text-text-secondary text-center text-lg max-w-2xl mx-auto">
-            We fix the biggest problems buyers face every day.
+            Charging infrastructure sourcing disasters I help buyers avoid.
           </p>
         </FadeIn>
 
