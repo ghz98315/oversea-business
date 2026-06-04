@@ -3,7 +3,35 @@
     "allow": [
       "Bash(npm install *)",
       "Bash(npx next *)",
-      "PowerShell(Start-Sleep -Seconds 5; curl.exe -s -o NUL -w \"%{http_code}\" http://localhost:3000)"
+      "PowerShell(Start-Sleep -Seconds 5; curl.exe -s -o NUL -w \"%{http_code}\" http://localhost:3000)",
+      "WebFetch(domain:www.xinghecast.com)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $resp = Invoke-WebRequest -Uri \"https://www.xinghecast.com/product/\" -UseBasicParsing; $resp.Images | Select-Object -ExpandProperty src | Select-Object -First 20)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $resp = Invoke-WebRequest -Uri \"http://www.gdyouqiang.cn/lxlweb/product.asp\" -UseBasicParsing; $resp.Images | Select-Object -ExpandProperty src | Select-Object -First 20)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $resp = Invoke-WebRequest -Uri \"http://www.in-moldmatic.com/\" -UseBasicParsing; $resp.Images | Select-Object -ExpandProperty src | Select-Object -First 20)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $resp = Invoke-WebRequest -Uri \"https://www.yizemedical.cn/\" -UseBasicParsing; $resp.Images | Select-Object -ExpandProperty src | Select-Object -First 20)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $resp = Invoke-WebRequest -Uri \"https://www.hongyun31.com/product\" -UseBasicParsing; $resp.Images | Select-Object -ExpandProperty src | Select-Object -First 20)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $resp = Invoke-WebRequest -Uri \"http://www.szamport.com/product.html\" -UseBasicParsing; $resp.Images | Select-Object -ExpandProperty src | Select-Object -First 20)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $resp = Invoke-WebRequest -Uri \"https://cn.yuhuiyazhu.com/\" -UseBasicParsing; $resp.Images | Select-Object -ExpandProperty src | Select-Object -First 20)",
+      "PowerShell($dir = \"D:\\\\github\\\\business_discuss\\\\silkbridge\\\\public\\\\suppliers\"; $base = \"https://www.xinghecast.com\"; Invoke-WebRequest -Uri \"$base/upload/product/month_1711/201711281441504797.jpg\" -OutFile \"$dir\\\\xinghe-workshop.jpg\"; Invoke-WebRequest -Uri \"$base/upload/product/month_1711/201711281442028569.jpg\" -OutFile \"$dir\\\\xinghe-product-04.jpg\"; Invoke-WebRequest -Uri \"$base/upload/product/month_2301/202301051440527620.jpg\" -OutFile \"$dir\\\\xinghe-product-05.jpg\"; \"Done xinghe\")",
+      "PowerShell($dir = \"D:\\\\github\\\\business_discuss\\\\silkbridge\\\\public\\\\suppliers\"; $base = \"https://www.yizemedical.cn\"; Invoke-WebRequest -Uri \"$base/u/image/1fafc3d7b21007d8cfaaeb0ea94ba5a3.jpg\" -OutFile \"$dir\\\\yize-workshop.jpg\"; Invoke-WebRequest -Uri \"$base/u/image/83526624c781d8501d774f88adc47a20.jpg\" -OutFile \"$dir\\\\yize-product-02.jpg\"; Invoke-WebRequest -Uri \"$base/u/image/4e2780bc0ce26947144a41d7bfc75cf8.jpg\" -OutFile \"$dir\\\\yize-product-03.jpg\"; Invoke-WebRequest -Uri \"$base/u/image/dbb7d0efbaacf4e4c400e4164c9a2d11.jpg\" -OutFile \"$dir\\\\yize-equipment.jpg\"; \"Done yize\")",
+      "PowerShell($dir = \"D:\\\\github\\\\business_discuss\\\\silkbridge\\\\public\\\\suppliers\"; Invoke-WebRequest -Uri \"http://login.114my.cn/memberpic/076923180225/uploadfile/image/20221212/20221212084213_1785698346.png\" -OutFile \"$dir\\\\inmoldmatic-product-02.png\"; Invoke-WebRequest -Uri \"http://login.114my.cn/memberpic/076923180225/uploadfile/image/20221212/20221212084213_89950822.png\" -OutFile \"$dir\\\\inmoldmatic-product-03.png\"; Invoke-WebRequest -Uri \"http://login.114my.cn/memberpic/076923180225/uploadfile/image/20221212/20221212084213_695530438.png\" -OutFile \"$dir\\\\inmoldmatic-workshop.png\"; \"Done inmoldmatic\")",
+      "PowerShell($dir = \"D:\\\\github\\\\business_discuss\\\\silkbridge\\\\public\\\\suppliers\"; $base = \"http://www.gdyouqiang.cn\"; Invoke-WebRequest -Uri \"$base/up_pic/20218138474039677.jpg\" -OutFile \"$dir\\\\youqiang-product-02.jpg\"; Invoke-WebRequest -Uri \"$base/up_pic/202181092578176.jpg\" -OutFile \"$dir\\\\youqiang-product-03.jpg\"; Invoke-WebRequest -Uri \"$base/up_pic/20216314135770230.jpg\" -OutFile \"$dir\\\\youqiang-workshop.jpg\"; \"Done youqiang\")",
+      "PowerShell(Get-ChildItem \"D:\\\\github\\\\business_discuss\\\\silkbridge\\\\public\\\\suppliers\" -File | Where-Object { $_.Name -match \"inmoldmatic|in-moldmatic\" } | Select-Object Name, Length)",
+      "PowerShell($html = \\(Invoke-WebRequest -Uri \"http://localhost:3000/suppliers/dongguan-xinghe-precision\" -UseBasicParsing -TimeoutSec 15\\).Content; $html.Substring\\([Math]::Max\\(0, $html.IndexOf\\(\"Overview\"\\) - 50\\), [Math]::Min\\(2000, $html.Length - [Math]::Max\\(0, $html.IndexOf\\(\"Overview\"\\) - 50\\)\\)\\))",
+      "PowerShell($content = \\(Invoke-WebRequest -Uri \"http://localhost:3000/suppliers/dongguan-xinghe-precision\" -UseBasicParsing -TimeoutSec 15\\).Content; if \\($content -match \"xinghe\"\\) { \"Contains xinghe content\" } else { \"Page length: $\\($content.Length\\)\" })",
+      "PowerShell($content = \\(Invoke-WebRequest -Uri \"http://localhost:3456/suppliers/dongguan-xinghe-precision\" -UseBasicParsing -TimeoutSec 20\\).Content; if \\($content -match \"Products &amp; Workshop\"\\) { \"Gallery section found!\" } elseif \\($content -match \"ProductGallery\"\\) { \"Component reference found\" } else { \"Not found. Searching for product images...\"; if \\($content -match \"xinghe-product\"\\) { \"product images referenced\" } })",
+      "PowerShell(try { $resp = Invoke-WebRequest -Uri \"https://silkbridge.vercel.app/suppliers/dongguan-xinghe-precision\" -UseBasicParsing -TimeoutSec 15; \"Status: $\\($resp.StatusCode\\), Contains gallery: $\\($resp.Content -match 'Products &amp; Workshop'\\)\" } catch { \"Error: $\\($_.Exception.Message\\)\" })",
+      "Bash(npm run *)",
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(node test-all.js)",
+      "Bash(node migrate-blog-data.mjs)",
+      "Bash(npm list *)",
+      "Bash(node *)",
+      "Bash(Set-Location D:\\\\github\\\\business_discuss\\\\silkbridge)",
+      "Bash(git *)",
+      "Bash(Select-Object -First 50)"
     ]
   }
 }
